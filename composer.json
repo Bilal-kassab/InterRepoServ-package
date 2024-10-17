@@ -1,0 +1,21 @@
+{
+    "name": "interreposerv/inreser",
+    "description": "A package for creating interface, repository, and service classes in Laravel",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "InterRepoServ\\InreSer\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^10.0" 
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "InterRepoServ\\InreSer\\InterRepoServProvider"
+            ]
+        }
+    }
+}
