@@ -5,16 +5,16 @@ This command is used to install the package
 
 ## How to use:
 
-### To make an Interface: ###
+### To make Interface: ###
 > #### php artisan make:interface YourInterfaceName
 <br />
 
 
-### To make a Repository ###
+### To make Repository ###
 make sure that u pass the previous interface name  
 > #### php artisan make:repository YourRepositoryName --interface=YourInterfaceName
 <br />
 
-### To make a Service ###
+### To make Service ###
 > #### php artisan make:service YourServiceName
 <br />
