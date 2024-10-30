@@ -1,6 +1,5 @@
 <?php
 
-
 namespace InterRepoServ\InreSer\Console\Commands;
 
 use Illuminate\Console\Command;
@@ -20,7 +19,7 @@ class MakeRepositoryCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Create a new repository for an existing interface';
+    protected $description = 'Create a new repository. Optionally, implement an existing interface';
 
     /**
      * Execute the console command.
@@ -29,20 +28,7 @@ class MakeRepositoryCommand extends Command
     {
         $repositoryName = $this->argument('name');
         $interfaceName = $this->option('interface');
-
-        if (!$interfaceName) {
-            $this->error('Please provide an interface name using the --interface option.');
-            return;
-        }
-
-        $interfacePath = app_path("Interfaces/{$interfaceName}.php");
         $repositoryPath = app_path("Repositories/{$repositoryName}.php");
-
-        // Check if the interface exists
-        if (!File::exists($interfacePath)) {
-            $this->error("Interface {$interfaceName} does not exist!");
-            return;
-        }
 
         // Check if the Repositories directory exists; if not, create it
         if (!File::exists(app_path('Repositories'))) {
@@ -55,17 +41,25 @@ class MakeRepositoryCommand extends Command
             return;
         }
 
-        // Repository file content
-        $content = "<?php
+        // Generate repository content based on whether the interface is provided
+        $content = "<?php\n\nnamespace App\\Repositories;\n\n";
 
-namespace App\\Repositories;
+        if ($interfaceName) {
+            $interfacePath = app_path("Interfaces/{$interfaceName}.php");
 
-use App\\Interfaces\\{$interfaceName};
+            // Check if the interface exists
+            if (!File::exists($interfacePath)) {
+                $this->error("Interface {$interfaceName} does not exist!");
+                return;
+            }
 
-class {$repositoryName} implements {$interfaceName}
-{
-    //
-}";
+            $content .= "use App\\Interfaces\\{$interfaceName};\n\n";
+            $content .= "class {$repositoryName} implements {$interfaceName}\n{\n    // Implement methods from {$interfaceName}\n";
+        } else {
+            $content .= "class {$repositoryName}\n{\n    // Define repository methods here\n";
+        }
+
+        $content .= "}\n";
 
         // Write content to the file
         File::put($repositoryPath, $content);
