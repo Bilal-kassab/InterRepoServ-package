@@ -1,6 +1,6 @@
 # InterRepoServ/InreSer Package
 
-A Laravel package to streamline the process of creating Interfaces, Repositories, Services, and DTOs (Data Transfer Objects) in a Laravel project. This package enables you to follow clean coding practices by using the Repository Pattern and Service Layer Pattern, promoting a modular and testable application structure.
+( Interface/Repository/Service )A Laravel package to streamline the process of creating Interfaces, Repositories, Services, and DTOs (Data Transfer Objects) in a Laravel project. This package enables you to follow clean coding practices by using the Repository Pattern and Service Layer Pattern, promoting a modular and testable application structure.
 
 
 ## Installation
