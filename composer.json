@@ -1,6 +1,6 @@
 {
     "name": "interreposerv/inreser",
-    "description": "A package for creating interface, repository, and service classes in Laravel",
+    "description": "A package for creating interface, repository, and service and other classes in Laravel",
     "type": "library",
     "autoload": {
         "psr-4": {

@@ -16,7 +16,8 @@ class InterRepoServProvider extends ServiceProvider
             \InterRepoServ\InreSer\Console\Commands\MakeInterfaceCommand::class,
             \InterRepoServ\InreSer\Console\Commands\MakeRepositoryCommand::class,
             \InterRepoServ\InreSer\Console\Commands\MakeServiceCommand::class,
-            \InterRepoServ\InreSer\Console\Commands\MakeDTOCommand::class,  
+            \InterRepoServ\InreSer\Console\Commands\MakeDTOCommand::class,
+            \InterRepoServ\InreSer\Console\Commands\MakeTraitCommand::class,
 
         ]);
     }

@@ -44,6 +44,12 @@ Data Transfer Objects (DTOs) help manage data structures by ensuring data integr
 This command generates a DTO class in app/DTOs with predefined methods for transforming data to and from arrays.
 <br />
 
+### `4. Creating a Trait`
+Traits allow you to share methods across multiple classes without using inheritance. To generate a new trait in your Laravel project, run:
+
+> ### php artisan make:trait YourTraitName
+This command creates a new trait in the app/Traits directory.
+<br />
 
 # Additional Information
 This package automatically registers these artisan commands, allowing for easy generation of Interfaces, Repositories, Services, and DTOs with a consistent structure across your Laravel application.

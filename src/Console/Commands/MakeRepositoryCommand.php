@@ -59,7 +59,7 @@ class MakeRepositoryCommand extends Command
             $content .= "class {$repositoryName}\n{\n    // Define repository methods here\n";
         }
 
-        
+
         $content .= "}\n";
 
         // Write content to the file
